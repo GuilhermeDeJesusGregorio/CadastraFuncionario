@@ -4,7 +4,7 @@ namespace CadastroFuncionarios
 {
     public class Funcionario
     {
-        public int Id { get; set; } // chave primária no banco
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public DateTime DataNascimento { get; set; }
@@ -16,5 +16,6 @@ namespace CadastroFuncionarios
         public string Banco { get; set; }
         public string Agencia { get; set; }
         public string Conta { get; set; }
+        public decimal Salario { get; set; }
     }
 }

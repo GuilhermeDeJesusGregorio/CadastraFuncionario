@@ -51,3 +51,5 @@ C:\Users\guilh\source\repos\CadastraFuncionario\bin\Debug\MySqlConnector.xml
 C:\Users\guilh\source\repos\CadastraFuncionario\obj\Debug\CadastraFuncionario.Form1.resources
 C:\Users\guilh\source\repos\CadastraFuncionario\obj\Debug\CadastroFuncionarios.FormFuncionarios.resources
 C:\Users\guilh\source\repos\CadastraFuncionario\obj\Debug\CadastroFuncionarios.FormLogin.resources
+C:\Users\guilh\source\repos\CadastraFuncionario\bin\Debug\itextsharp.dll
+C:\Users\guilh\source\repos\CadastraFuncionario\bin\Debug\itextsharp.xml
