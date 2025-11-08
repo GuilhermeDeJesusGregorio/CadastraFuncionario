@@ -1,116 +1,109 @@
-CadastraFuncionario
-Sistema desktop desenvolvido em C# para auxiliar o gerenciamento de recursos humanos (RH), focado no cadastro e manutenção de informações de funcionários.
+# CadastraFuncionario
 
-O projeto permite armazenar, visualizar e gerenciar dados de colaboradores de forma prática e eficiente, utilizando uma interface gráfica amigável com persistência de dados em MySQL.
+Projeto para cadastro e gerenciamento de funcionários, desenvolvido em C# (.NET Framework) com interface gráfica (WinForms), integrado a banco de dados MySQL.  
+Permite realizar operações básicas de CRUD (Criar, Ler, Atualizar e Deletar) sobre os registros de colaboradores.
 
-🌟 Funcionalidades
-Cadastro Completo: Permite o registro de novos funcionários com as seguintes informações:
+## Funcionalidades principais
 
-Nome
+- Cadastro de novos funcionários, com campos como nome, data de admissão, salário, etc.  
+- Listagem de funcionários existentes.  
+- Edição e exclusão de registros.  
+- Integração com banco de dados MySQL para persistência de dados.  
+- Interface simples e intuitiva para usuário final (desktop).  
 
-Cargo
+## Tecnologias utilizadas
 
-Salário
+- Linguagem: C#  
+- Plataforma: .NET Framework (versão conforme especificado no projeto)  
+- Banco de dados: MySQL  
+- Acesso a dados: MySql.Data (Connector/NET)  
+- Interface gráfica: Windows Forms (WinForms)  
+- Controles padrão do Windows Forms para formulários, tabelas, botões etc.  
+- Gerenciamento de pacotes: NuGet  
 
-Data de Admissão
+## Pré-requisitos
 
-Cor/Raça
+- Windows OS compatível com aplicações .NET Framework  
+- Instalado o MySQL (versão compatível) ou acesso remoto a um servidor MySQL  
+- String de conexão devidamente configurada no arquivo `App.config`  
+- Permissões adequadas para criar/alterar tabela no banco de dados  
 
-Forma de Pagamento
+## Instalação e configuração
 
-Instituição Bancária
+1. Clone o repositório:
+2.  git clone https://github.com/GuilhermeDeJesusGregorio/CadastraFuncionario.git
 
-Visualização e Gerenciamento: Interface para listar e visualizar todos os registros cadastrados.
+Abra o projeto no Visual Studio (versão compatível).
 
-Persistência de Dados: Conexão com banco de dados MySQL para armazenamento permanente das informações.
+No Gerenciador de Pacotes NuGet, instale ou verifique as dependências:
 
-Interface Amigável: Desenvolvido com Windows Forms para uma experiência desktop intuitiva.
+MySql.Data
 
-💻 Tecnologias Utilizadas
-Componente	Tecnologia	Descrição
-Linguagem Principal	C#	Base do desenvolvimento da aplicação desktop.
-Framework	.NET Framework	Utilizado para criar a aplicação Windows Forms.
-Interface Gráfica	Windows Forms	Para a criação da interface do usuário (UI).
-Banco de Dados	MySQL	Sistema de gerenciamento de banco de dados para persistência.
-Conexão	MySQL Connector/NET	Biblioteca para integração e comunicação entre C# e MySQL.
-IDE	Visual Studio	Ambiente de desenvolvimento recomendado.
+Outras bibliotecas conforme listado no projeto (se houver).
 
-Exportar para as Planilhas
-🛠 Pré-requisitos
-Antes de executar o projeto, você precisará ter os seguintes softwares instalados:
+Configure a string de conexão no App.config (exemplo):
 
-Visual Studio (Versão compatível com .NET Framework).
+<connectionStrings>
+  <add name="CadastraFuncionarioDB" connectionString="server=localhost;user id=root;password=senha;database=CadastraFuncionarioDB;Persist Security Info=True" providerName="MySql.Data.MySqlClient"/>
+</connectionStrings>
 
-MySQL Server (Para hospedar o banco de dados).
 
-MySQL Connector/NET (Para a conexão entre C# e MySQL).
+Prepare o banco de dados MySQL:
 
-MySQL Workbench (Opcional, para gerenciar o banco visualmente).
+Crie banco de dados: CadastraFuncionarioDB (ou o nome que preferir).
 
-🚀 Como Configurar e Executar
-Siga os passos abaixo para colocar o projeto em funcionamento.
+Execute o script SQL de criação da tabela (caso exista no repositório) para criar a tabela Funcionarios com os campos necessários.
 
-1. Clonar o Repositório
-Abra seu terminal ou Git Bash e clone o projeto:
+Compile e execute o aplicativo.
 
-Bash
+Ao abrir, utilize a interface para cadastrar, editar, excluir e visualizar funcionários.
 
-git clone https://github.com/GuilhermeDeJesusGregorio/CadastraFuncionario.git
-2. Configurar o Banco de Dados MySQL
-Crie o banco de dados e a tabela de funcionários no seu servidor MySQL:
+Estrutura do projeto
 
-SQL
+Form1.cs — Tela principal com listagem de funcionários e botões de ação (Adicionar, Editar, Excluir).
 
--- Criação do Banco de Dados
-CREATE DATABASE CadastraFuncionarioDB;
+Funcionario.cs — Classe de modelo representando um funcionário.
 
--- Uso do Banco de Dados
-USE CadastraFuncionarioDB;
+DaoFuncionario.cs — Classe de acesso a dados (DAO) que interage com o banco MySQL.
 
--- Criação da Tabela de Funcionários
-CREATE TABLE Funcionarios (
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Nome VARCHAR(100) NOT NULL,
-    Cargo VARCHAR(50) NOT NULL,
-    Salario DECIMAL(10,2) NOT NULL,
-    DataAdmissao DATE NOT NULL,
-    -- Campos adicionais sugeridos
-    CorRaca VARCHAR(50),
-    FormaPagamento VARCHAR(50),
-    InstituicaoBancaria VARCHAR(100)
-);
-3. Abrir e Configurar o Projeto
-Abra o projeto (CadastraFuncionario.sln) no Visual Studio.
+App.config — Arquivo de configuração com string de conexão e outras definições.
 
-Localize o arquivo de configuração (App.config ou o arquivo no Backend/ que contém a string de conexão).
+Pastas adicionais, como Recursos, Interfaces, etc, conforme organização do repositório.
 
-Atualize a string de conexão com suas credenciais do MySQL (servidor, usuário e senha) para se conectar ao CadastraFuncionarioDB.
+Uso
 
-4. Compilar e Executar
-Certifique-se de que todas as dependências do MySQL Connector/NET foram resolvidas.
+Adicionar funcionário: clique no botão “Adicionar”, preencha os dados e confirme.
 
-Compile o projeto.
+Editar funcionário: selecione um registro na listagem e clique em “Editar”.
 
-Execute a aplicação (pressione F5 ou clique em "Start" no Visual Studio).
+Excluir funcionário: selecione um registro e clique em “Excluir”.
 
-A interface do sistema será exibida, permitindo que você cadastre e gerencie funcionários.
+Visualizar listagem: todos os funcionários cadastrados são exibidos em tabela, com colunas relevantes.
 
-📂 Estrutura do Projeto
-O projeto é organizado em camadas para separar a interface gráfica da lógica de negócios e do acesso a dados:
+Boas práticas e observações
 
-CadastraFuncionario/
-├── Backend/          # Contém a lógica de negócios e a integração com o MySQL (acesso a dados).
-├── Frontend/         # Contém os formulários e elementos gráficos da aplicação (Windows Forms UI).
-├── Dashboard/        # (Se aplicável) Área de visualização/resumo dos dados.
-├── Properties/       # Configurações do projeto, incluindo o App.config.
-├── App.config        # Arquivo de configuração, onde geralmente fica a string de conexão.
-├── CadastraFuncionario.csproj
-└── CadastraFuncionario.sln
-📈 Melhorias Futuras
-O projeto pode ser expandido com as seguintes melhorias:
+Trate exceções de conexão com banco de dados (ex: servidor inacessível, credenciais inválidas).
 
-Relatórios: Adicionar funcionalidade para gerar relatórios detalhados em formatos como PDF ou Excel.
+Valide campos de entrada — por exemplo: data de admissão não pode ser futura, salário deve ser número positivo etc.
 
-UX/UI: Melhorar a interface gráfica com elementos mais intuitivos, modernos e responsivos.
+Considere utilizar uma camada de serviços (Service) se o projeto crescer, para separar lógica de negócios da interface.
 
-Funcionalidades CRUD: Implementar as funcionalidades de Edição (Update) e Exclusão (Delete) de registros de funcionários.
+Considere migração para Entity Framework ou outro ORM para facilitar manutenção futura.
+
+Faça backup regular do banco de dados para evitar perda de dados.
+
+Contribuição
+
+Contribuições são bem-vindas! Você pode:
+
+Abrir issues relatando bugs ou sugerindo melhorias.
+
+Enviar pull requests com correções, novas funcionalidades ou refatorações.
+
+Sugerir melhorias na interface, adicionar internacionalização, relatórios, exportação/imporação de dados etc.
+
+Licença
+
+Este projeto está licenciado sob a [inserir licença, por exemplo MIT] – veja o arquivo LICENSE para mais detalhes.
+   ```bash
+   git clone https://github.com/GuilhermeDeJesusGregorio/CadastraFuncionario.git
