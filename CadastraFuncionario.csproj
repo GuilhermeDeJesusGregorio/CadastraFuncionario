@@ -117,6 +117,7 @@
   <ItemGroup>
     <Compile Include="Backend\Auth\AuthService.cs" />
     <Compile Include="Backend\Models\Funcionario.cs" />
+    <Compile Include="Backend\PdfReportGenerator\PdfReportGenerator.cs.cs" />
     <Compile Include="Backend\Services\FuncionarioService.cs" />
     <Compile Include="Dashboard\DashboardModel.cs" />
     <Compile Include="Dashboard\DashboardService.cs" />
